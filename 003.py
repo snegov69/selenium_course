@@ -13,7 +13,7 @@ try:
     button = browser.find_element(By.PARTIAL_LINK_TEXT, res)
     button.click()
     input1 = browser.find_element(By.TAG_NAME, "input")
-    input1.send_keys("Ivan")
+    input1.send_keys("Ivan Ivanov")
     input2 = browser.find_element(By.NAME, "last_name")
     input2.send_keys("Petrov")
     input3 = browser.find_element(By.CLASS_NAME, "city")
