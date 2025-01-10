@@ -7,15 +7,10 @@ try:
     browser = webdriver.Chrome()
     browser.get(link)
 
-    input1 = browser.find_element(By.CLASS_NAME, "form-control.first")
-    input1.send_keys("Ivan")
-
-    input2 = browser.find_element(By.CLASS_NAME, "form-control.second")
-    input2.send_keys("Ivanov")
-
-    input3 = browser.find_element(By.CLASS_NAME, "form-control.third")
-    input3.send_keys("avadakedavra@yandex.ru")
-
+    elements = browser.find_elements(By.CSS_SELECTOR, "input[required]")
+    for element in elements:
+        element.send_keys("My answer")
+    time.sleep(1)
     # Отправляем заполненную форму
     button = browser.find_element(By.CSS_SELECTOR, "button.btn")
     button.click()
